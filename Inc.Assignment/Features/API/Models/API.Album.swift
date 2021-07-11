@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import RealmSwift
 
 extension API {
 
-    class Album: Codable {
+    class Album: Object, Codable {
 
         let userId: Int
         let id: Int
