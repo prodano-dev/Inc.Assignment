@@ -37,7 +37,6 @@ extension Album {
         override func viewDidLoad() {
             title = "Albums"
             navigationController?.navigationBar.prefersLargeTitles = true
-           
 
             viewModel.fetchAlbums()
             viewModel.updateUI = {
@@ -49,6 +48,8 @@ extension Album {
 
             _view.tableView.delegate = self
             _view.tableView.dataSource = self
+
+            updateUI()
         }
 
         override func viewDidDisappear(_ animated: Bool) {

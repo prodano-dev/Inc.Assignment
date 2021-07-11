@@ -25,6 +25,11 @@
 		EB53401C269A0A3400806F67 /* API.Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB53401B269A0A3400806F67 /* API.Urls.swift */; };
 		EB53401F269A0E4F00806F67 /* Photo.ViewController.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB53401E269A0E4F00806F67 /* Photo.ViewController.View.swift */; };
 		EB534027269A1F6900806F67 /* Photo.View.Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB534026269A1F6900806F67 /* Photo.View.Cell.swift */; };
+		EB53402B269ADD0E00806F67 /* TabBar.Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB53402A269ADD0E00806F67 /* TabBar.Controller.swift */; };
+		EB534031269ADDFE00806F67 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB534030269ADDFE00806F67 /* Favorites.swift */; };
+		EB534036269ADE2100806F67 /* Favorites.ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB534035269ADE2100806F67 /* Favorites.ViewController.swift */; };
+		EB534039269ADE4A00806F67 /* Favorites.ViewController.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB534038269ADE4A00806F67 /* Favorites.ViewController.View.swift */; };
+		EB53403D269B0C7400806F67 /* Favorite.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB53403C269B0C7400806F67 /* Favorite.ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +53,11 @@
 		EB53401B269A0A3400806F67 /* API.Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.Urls.swift; sourceTree = "<group>"; };
 		EB53401E269A0E4F00806F67 /* Photo.ViewController.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.ViewController.View.swift; sourceTree = "<group>"; };
 		EB534026269A1F6900806F67 /* Photo.View.Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.View.Cell.swift; sourceTree = "<group>"; };
+		EB53402A269ADD0E00806F67 /* TabBar.Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.Controller.swift; sourceTree = "<group>"; };
+		EB534030269ADDFE00806F67 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
+		EB534035269ADE2100806F67 /* Favorites.ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.ViewController.swift; sourceTree = "<group>"; };
+		EB534038269ADE4A00806F67 /* Favorites.ViewController.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.ViewController.View.swift; sourceTree = "<group>"; };
+		EB53403C269B0C7400806F67 /* Favorite.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +153,9 @@
 		EB0B571A2699D03500748D20 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
+				EB53402F269ADDF100806F67 /* ViewModel */,
+				EB53402E269ADDEC00806F67 /* UI */,
+				EB534030269ADDFE00806F67 /* Favorites.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -150,6 +163,7 @@
 		EB0B571B2699D03E00748D20 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				EB534029269ADCF400806F67 /* TabBar */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -195,6 +209,31 @@
 			isa = PBXGroup;
 			children = (
 				EB534015269A080100806F67 /* Photo.ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EB534029269ADCF400806F67 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				EB53402A269ADD0E00806F67 /* TabBar.Controller.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		EB53402E269ADDEC00806F67 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				EB534035269ADE2100806F67 /* Favorites.ViewController.swift */,
+				EB534038269ADE4A00806F67 /* Favorites.ViewController.View.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		EB53402F269ADDF100806F67 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EB53403C269B0C7400806F67 /* Favorite.ViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -271,11 +310,16 @@
 				EB533FFC2699D23200806F67 /* Album.View.TableViewCell.swift in Sources */,
 				EB534027269A1F6900806F67 /* Photo.View.Cell.swift in Sources */,
 				EB0B57232699D08900748D20 /* Album.ViewController.swift in Sources */,
+				EB53403D269B0C7400806F67 /* Favorite.ViewModel.swift in Sources */,
 				EB533FF92699D1EC00806F67 /* Album.ViewController.View.swift in Sources */,
+				EB534036269ADE2100806F67 /* Favorites.ViewController.swift in Sources */,
+				EB53402B269ADD0E00806F67 /* TabBar.Controller.swift in Sources */,
 				EB53401F269A0E4F00806F67 /* Photo.ViewController.View.swift in Sources */,
 				EB5340082699DD2100806F67 /* Ablum.ViewModel.swift in Sources */,
 				EB53400E269A079100806F67 /* Photo.swift in Sources */,
 				EB5340042699DC7000806F67 /* API.Album.swift in Sources */,
+				EB534031269ADDFE00806F67 /* Favorites.swift in Sources */,
+				EB534039269ADE4A00806F67 /* Favorites.ViewController.View.swift in Sources */,
 				EB534019269A087E00806F67 /* API.Photo.swift in Sources */,
 				EB534013269A07B400806F67 /* Photo.ViewController.swift in Sources */,
 				EB53400B2699DDFB00806F67 /* API.Manager.swift in Sources */,

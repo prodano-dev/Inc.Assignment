@@ -15,11 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let api = API.Manager()
-        let viewModel = Album.ViewModel(api: api)
-        self.window?.rootViewController = UINavigationController(
-            rootViewController: Album.ViewController(viewModel: viewModel)
-        )
+
+        self.window?.rootViewController = TabBarController()
+        self.window?.rootViewController?.navigationController?.setNavigationBarHidden(true, animated: false)
         self.window?.makeKeyAndVisible()
 
         return true
