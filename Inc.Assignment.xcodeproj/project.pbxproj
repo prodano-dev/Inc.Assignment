@@ -18,6 +18,13 @@
 		EB5340042699DC7000806F67 /* API.Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5340032699DC7000806F67 /* API.Album.swift */; };
 		EB5340082699DD2100806F67 /* Ablum.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5340072699DD2100806F67 /* Ablum.ViewModel.swift */; };
 		EB53400B2699DDFB00806F67 /* API.Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB53400A2699DDFB00806F67 /* API.Manager.swift */; };
+		EB53400E269A079100806F67 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB53400D269A079100806F67 /* Photo.swift */; };
+		EB534013269A07B400806F67 /* Photo.ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB534012269A07B400806F67 /* Photo.ViewController.swift */; };
+		EB534016269A080100806F67 /* Photo.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB534015269A080100806F67 /* Photo.ViewModel.swift */; };
+		EB534019269A087E00806F67 /* API.Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB534018269A087E00806F67 /* API.Photo.swift */; };
+		EB53401C269A0A3400806F67 /* API.Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB53401B269A0A3400806F67 /* API.Urls.swift */; };
+		EB53401F269A0E4F00806F67 /* Photo.ViewController.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB53401E269A0E4F00806F67 /* Photo.ViewController.View.swift */; };
+		EB534027269A1F6900806F67 /* Photo.View.Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB534026269A1F6900806F67 /* Photo.View.Cell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +41,13 @@
 		EB5340032699DC7000806F67 /* API.Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.Album.swift; sourceTree = "<group>"; };
 		EB5340072699DD2100806F67 /* Ablum.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ablum.ViewModel.swift; sourceTree = "<group>"; };
 		EB53400A2699DDFB00806F67 /* API.Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.Manager.swift; sourceTree = "<group>"; };
+		EB53400D269A079100806F67 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		EB534012269A07B400806F67 /* Photo.ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.ViewController.swift; sourceTree = "<group>"; };
+		EB534015269A080100806F67 /* Photo.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.ViewModel.swift; sourceTree = "<group>"; };
+		EB534018269A087E00806F67 /* API.Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.Photo.swift; sourceTree = "<group>"; };
+		EB53401B269A0A3400806F67 /* API.Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.Urls.swift; sourceTree = "<group>"; };
+		EB53401E269A0E4F00806F67 /* Photo.ViewController.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.ViewController.View.swift; sourceTree = "<group>"; };
+		EB534026269A1F6900806F67 /* Photo.View.Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.View.Cell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +122,9 @@
 		EB0B57182699D02900748D20 /* Photo */ = {
 			isa = PBXGroup;
 			children = (
+				EB534011269A07A300806F67 /* ViewModel */,
+				EB534010269A079E00806F67 /* UI */,
+				EB53400D269A079100806F67 /* Photo.swift */,
 			);
 			path = Photo;
 			sourceTree = "<group>";
@@ -118,6 +135,7 @@
 				EB5340022699DC6300806F67 /* Models */,
 				EB533FFF2699DC5900806F67 /* API.swift */,
 				EB53400A2699DDFB00806F67 /* API.Manager.swift */,
+				EB53401B269A0A3400806F67 /* API.Urls.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -158,8 +176,27 @@
 			isa = PBXGroup;
 			children = (
 				EB5340032699DC7000806F67 /* API.Album.swift */,
+				EB534018269A087E00806F67 /* API.Photo.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		EB534010269A079E00806F67 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				EB534012269A07B400806F67 /* Photo.ViewController.swift */,
+				EB53401E269A0E4F00806F67 /* Photo.ViewController.View.swift */,
+				EB534026269A1F6900806F67 /* Photo.View.Cell.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		EB534011269A07A300806F67 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EB534015269A080100806F67 /* Photo.ViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,11 +269,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB533FFC2699D23200806F67 /* Album.View.TableViewCell.swift in Sources */,
+				EB534027269A1F6900806F67 /* Photo.View.Cell.swift in Sources */,
 				EB0B57232699D08900748D20 /* Album.ViewController.swift in Sources */,
 				EB533FF92699D1EC00806F67 /* Album.ViewController.View.swift in Sources */,
+				EB53401F269A0E4F00806F67 /* Photo.ViewController.View.swift in Sources */,
 				EB5340082699DD2100806F67 /* Ablum.ViewModel.swift in Sources */,
+				EB53400E269A079100806F67 /* Photo.swift in Sources */,
 				EB5340042699DC7000806F67 /* API.Album.swift in Sources */,
+				EB534019269A087E00806F67 /* API.Photo.swift in Sources */,
+				EB534013269A07B400806F67 /* Photo.ViewController.swift in Sources */,
 				EB53400B2699DDFB00806F67 /* API.Manager.swift in Sources */,
+				EB53401C269A0A3400806F67 /* API.Urls.swift in Sources */,
+				EB534016269A080100806F67 /* Photo.ViewModel.swift in Sources */,
 				EB0B56FF2699CE9700748D20 /* AppDelegate.swift in Sources */,
 				EB5340002699DC5900806F67 /* API.swift in Sources */,
 				EB0B57202699D06F00748D20 /* Album.swift in Sources */,

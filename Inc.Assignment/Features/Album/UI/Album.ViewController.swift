@@ -43,6 +43,9 @@ extension Album {
             viewModel.updateUI = {
                 self.updateUI()
             }
+            viewModel.didTappedAlbum = {
+                self.pushPhotoViewController()
+            }
 
             _view.tableView.delegate = self
             _view.tableView.dataSource = self
@@ -67,6 +70,14 @@ extension Album {
             cell.favIconButton.setImage(UIImage(systemName: album!.isFavorite ? "heart.fill" : "heart"), for: .normal)
 
             /// TODO: add favorite to local storage
+        }
+
+        private func pushPhotoViewController() {
+            let photoViewModel = Photo.ViewModel(album: viewModel.selectedAlbum!, api: viewModel.api)
+            navigationController?.pushViewController(
+                Photo.ViewController(viewModel: photoViewModel),
+                animated: true
+            )
         }
 
         // MARK: - Tableview

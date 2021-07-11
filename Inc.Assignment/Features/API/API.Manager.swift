@@ -20,10 +20,7 @@ extension API {
 
         }
 
-        public func fetchData<T:Codable>(codable: [T].Type,url: String, completion: @escaping (Result<[T], Error>) -> Void) {
-
-            guard let url = URL(string: url) else { preconditionFailure() }
-
+        public func fetchData<T:Codable>(codable: [T].Type,url: URL, completion: @escaping (Result<[T], Error>) -> Void) {
             let dataTask = session.dataTask(with: url) { (data, response, error) in
 
                 if let error = error {
