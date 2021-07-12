@@ -74,8 +74,6 @@ extension Photo.View {
                 multiplier: 1.0, constant: 0)
                 ]
             )
-
-
         }
 
         public let activityInidcator: UIActivityIndicatorView = {

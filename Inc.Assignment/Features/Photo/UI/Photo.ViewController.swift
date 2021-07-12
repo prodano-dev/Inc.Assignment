@@ -47,6 +47,8 @@ extension Photo {
             _view.collectionView.dataSource = self
         }
 
+        // MARK: - Functions
+
         private func updateUI() {
             _view.collectionView.reloadData()
         }
@@ -87,6 +89,8 @@ extension Photo {
 
             viewModel.unfavoriteAlbum(album: album)
         }
+
+        // MARK: - CollectionView
 
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
             viewModel.numberOfCells
