@@ -61,10 +61,30 @@ extension Photo {
             navigationItem.rightBarButtonItem = favorite
         }
 
-        @objc private func didTappedFavoriteButton(){
+        @objc private func didTappedFavoriteButton() {
 
-            viewModel.album.isFavorite.toggle()
+            let album = viewModel.album
+
+            if album.isFavorite {
+                let alertController = UIAlertController(title: "Unfavorite album", message: "Are you sure you want to unfavorite this album?", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                    self.unfavoriteAlbum(album: album)
+                }))
+                alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil
+                ))
+                self.present(alertController, animated: true)
+            } else {
+                album.isFavorite = true
+                viewModel.album.isFavorite = true
+                viewModel.addAlbumToFavorites(album: album)
+            }
+
             setupNavigationBar()
+        }
+
+        private func unfavoriteAlbum(album: AlbumAPI) {
+
+            viewModel.unfavoriteAlbum(album: album)
         }
 
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

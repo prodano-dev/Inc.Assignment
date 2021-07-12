@@ -12,8 +12,12 @@ extension Favorites {
     class ViewModel: NSObject {
 
         public let api: API.Manager
-        public var favorites: [API.Album] = []
-        public private(set) var selectedFavorite: API.Album? {
+        public var favorites: [AlbumAPI] = [] {
+            didSet {
+                updateUI?()
+            }
+        }
+        public private(set) var selectedFavorite: AlbumAPI? {
             didSet {
 
             }
@@ -25,12 +29,15 @@ extension Favorites {
             super.init()
         }
 
-        public func saveChanges() {
+        public func unfavoriteAlbum(album: AlbumAPI) {
 
+            api.unfavoriteAlbum(album: album)
+            
         }
 
         public func fetchFavorites() {
-            
+
+            favorites = api.fetchFavorites()
         }
 
         // MARK: - TableView
@@ -39,7 +46,7 @@ extension Favorites {
             return favorites.count
         }
 
-        public func favoriteAtIndexPath(indexPath: IndexPath) -> API.Album? {
+        public func favoriteAtIndexPath(indexPath: IndexPath) -> AlbumAPI? {
             return favorites[indexPath.row]
         }
 

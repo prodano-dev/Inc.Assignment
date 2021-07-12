@@ -8,19 +8,16 @@
 import Foundation
 import RealmSwift
 
-extension API {
+class AlbumAPI: Object, Decodable, Encodable {
 
-    class Album: Object, Codable {
+    @objc dynamic var userId: Int = 0
+    @objc dynamic var id: Int = 0
+    @objc dynamic var title: String = ""
+    @objc dynamic var isFavorite: Bool = false
 
-        let userId: Int
-        let id: Int
-        let title: String
-        var isFavorite: Bool = false
-
-        enum CodingKeys: String, CodingKey {
-            case userId = "userId"
-            case id = "id"
-            case title = "title"
-        }
+    enum CodingKeys: String, CodingKey {
+        case userId = "userId"
+        case id = "id"
+        case title = "title"
     }
 }

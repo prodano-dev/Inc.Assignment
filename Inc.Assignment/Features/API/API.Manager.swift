@@ -14,6 +14,7 @@ extension API {
 
         private let session: URLSession
         private var dataTask: URLSessionDataTask?
+        private let localRealm = try! Realm()
 
         override init(){
             self.session = URLSession.shared
@@ -56,6 +57,30 @@ extension API {
                 }
             }
             dataTask.resume()
+        }
+
+        public func addToFavorites(album: AlbumAPI)  {
+
+            try! localRealm.write {
+                localRealm.add(album)
+            }
+            print("✅✅✅ Album has been added!")
+        }
+
+        public func fetchFavorites() -> [AlbumAPI] {
+
+            var albums: [AlbumAPI] = []
+            albums = Array(localRealm.objects(AlbumAPI.self))
+
+            return albums
+        }
+
+        public func unfavoriteAlbum(album: AlbumAPI) {
+
+            try! localRealm.write {
+                localRealm.delete(album)
+            }
+            print("🗑🗑🗑 Album has been deleted!")
         }
 
         public func cancelTask() {

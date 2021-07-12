@@ -12,18 +12,17 @@ extension Album {
     class ViewModel: NSObject {
 
         public let api: API.Manager
-        public private(set) var albums: [API.Album]? {
+        public private(set) var albums: [AlbumAPI]? {
             didSet {
                 updateUI?()
             }
         }
-        public private(set) var selectedAlbum: API.Album? {
+        public private(set) var selectedAlbum: AlbumAPI? {
             didSet {
                 didTappedAlbum?()
             }
         }
-        private let albumURL = "https://jsonplaceholder.typicode.com/albums/"
-
+        
         public init(api: API.Manager) {
             self.api = api
 
@@ -34,7 +33,7 @@ extension Album {
 
         public func fetchAlbums() {
 
-            api.fetchData(codable: [API.Album].self, url: API.URLlink.album()) { [weak self] result in
+            api.fetchData(codable: [AlbumAPI].self, url: API.URLlink.album()) { [weak self] result in
 
                 switch result {
 
@@ -44,6 +43,17 @@ extension Album {
                     print("⚠️⚠️⚠️", error)
                 }
             }
+        }
+
+        public func addAlbumToFavorites(album: AlbumAPI) {
+
+            api.addToFavorites(album: album)
+        }
+
+        public func unfavoriteAlbum(album: AlbumAPI) {
+
+            api.unfavoriteAlbum(album: album)
+
         }
 
         public func stopFetching() {
@@ -57,7 +67,7 @@ extension Album {
             return albums.count
         }
 
-        public func albumAtIndexPath(indexPath: IndexPath) -> API.Album? {
+        public func albumAtIndexPath(indexPath: IndexPath) -> AlbumAPI? {
             return albums?[indexPath.row]
         }
 

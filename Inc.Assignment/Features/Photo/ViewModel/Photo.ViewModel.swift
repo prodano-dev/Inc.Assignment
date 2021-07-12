@@ -11,7 +11,7 @@ extension Photo {
 
     class ViewModel: NSObject {
 
-        let album: API.Album
+        var album: AlbumAPI
         let api: API.Manager
         public private(set) var photos: [API.Photo]? {
             didSet{
@@ -19,7 +19,7 @@ extension Photo {
             }
         }
 
-        public init(album: API.Album, api: API.Manager) {
+        public init(album: AlbumAPI, api: API.Manager) {
 
             self.album = album
             self.api = api
@@ -39,6 +39,17 @@ extension Photo {
                     print("⚠️⚠️⚠️", error)
                 }
             }
+        }
+
+        public func addAlbumToFavorites(album: AlbumAPI) {
+
+            api.addToFavorites(album: album)
+        }
+
+        public func unfavoriteAlbum(album: AlbumAPI) {
+
+            api.unfavoriteAlbum(album: album)
+
         }
 
         // MARK: - TableView

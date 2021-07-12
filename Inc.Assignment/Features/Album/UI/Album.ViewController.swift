@@ -67,10 +67,27 @@ extension Album {
             let indexPath = IndexPath(row: sender.tag, section: 0)
             let cell = _view.tableView.cellForRow(at: indexPath) as! Album.View.Cell
             let album = viewModel.albumAtIndexPath(indexPath: indexPath)
-            album?.isFavorite.toggle()
-            cell.favIconButton.setImage(UIImage(systemName: album!.isFavorite ? "heart.fill" : "heart"), for: .normal)
 
-            /// TODO: add favorite to local storage
+            if album!.isFavorite {
+                let alertController = UIAlertController(title: "Unfavorite album", message: "Are you sure you want to unfavorite this album?", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                    self.unfavoriteAlbum(album: album!, cell: cell)
+                }))
+                alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil
+                ))
+                self.present(alertController, animated: true)
+            } else {
+                album!.isFavorite = true
+                viewModel.addAlbumToFavorites(album: album!)
+            }
+
+            cell.favIconButton.setImage(UIImage(systemName: album!.isFavorite ? "heart.fill" : "heart"), for: .normal)
+        }
+
+        private func unfavoriteAlbum(album: AlbumAPI, cell: Album.View.Cell) {
+
+            cell.favIconButton.setImage(UIImage(systemName:"heart"), for: .normal)
+            viewModel.unfavoriteAlbum(album: album)
         }
 
         private func pushPhotoViewController() {
