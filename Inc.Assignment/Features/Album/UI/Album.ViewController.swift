@@ -38,6 +38,7 @@ extension Album {
             title = "Albums"
             navigationController?.navigationBar.prefersLargeTitles = true
 
+            // ViewModel
             viewModel.fetchAlbums()
             viewModel.updateUI = {
                 self.updateUI()
@@ -45,9 +46,17 @@ extension Album {
             viewModel.didTappedAlbum = {
                 self.pushPhotoViewController()
             }
+            viewModel.fetchError = {
+                self.showAlertView()
+            }
 
+            // View
             _view.tableView.delegate = self
             _view.tableView.dataSource = self
+            _view.failedView.retryButton.addTarget(self,
+                                                   action: #selector(tryFetchingAgain),
+                                                   for: .touchUpInside
+            )
 
             updateUI()
         }
@@ -60,6 +69,16 @@ extension Album {
 
         private func updateUI() {
             _view.tableView.reloadData()
+        }
+
+        private func showAlertView() {
+            _view.failedView.isHidden = false
+        }
+
+        @objc private func tryFetchingAgain() {
+
+            _view.failedView.isHidden = true
+            viewModel.fetchAlbums()
         }
 
         @objc private func didTappedFavIcon(_ sender: UIButton) {

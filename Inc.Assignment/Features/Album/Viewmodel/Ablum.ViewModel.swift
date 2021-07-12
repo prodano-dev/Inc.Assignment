@@ -22,6 +22,12 @@ extension Album {
                 didTappedAlbum?()
             }
         }
+        public private(set) var errorWithFetching: String? {
+            didSet {
+                fetchError?()
+            }
+        }
+
         
         public init(api: API.Manager) {
             self.api = api
@@ -40,7 +46,7 @@ extension Album {
                 case .success(let result):
                     self?.albums = result
                 case .failure(let error):
-                    print("⚠️⚠️⚠️", error)
+                    self?.errorWithFetching = error.localizedDescription
                 }
             }
         }
@@ -80,6 +86,7 @@ extension Album {
 
         public var updateUI: (() -> Void)?
         public var didTappedAlbum: (() -> Void)?
+        public var fetchError: (() -> Void)?
 
     }
 }

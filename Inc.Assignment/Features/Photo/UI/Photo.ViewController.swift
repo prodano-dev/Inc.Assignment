@@ -37,6 +37,7 @@ extension Photo {
             title = viewModel.album.title
             setupNavigationBar()
 
+            
             viewModel.fetchPhotos()
             viewModel.updateUI = {
                 self.updateUI()
@@ -95,8 +96,7 @@ extension Photo {
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! Photo.View.Cell
             guard let photo = viewModel.photos?[indexPath.row] else { preconditionFailure()}
-            cell.photoTitleLabel.text = photo.title
-
+            cell.photo = photo
             return cell
         }
 

@@ -32,6 +32,7 @@
 		EB53403D269B0C7400806F67 /* Favorite.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB53403C269B0C7400806F67 /* Favorite.ViewModel.swift */; };
 		EB534042269B195500806F67 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = EB534041269B195500806F67 /* Realm */; };
 		EB534044269B195500806F67 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EB534043269B195500806F67 /* RealmSwift */; };
+		EBF05C44269C362A001D0386 /* FailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF05C43269C362A001D0386 /* FailedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		EB534035269ADE2100806F67 /* Favorites.ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.ViewController.swift; sourceTree = "<group>"; };
 		EB534038269ADE4A00806F67 /* Favorites.ViewController.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.ViewController.View.swift; sourceTree = "<group>"; };
 		EB53403C269B0C7400806F67 /* Favorite.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.ViewModel.swift; sourceTree = "<group>"; };
+		EBF05C43269C362A001D0386 /* FailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 		EB0B571B2699D03E00748D20 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				EBF05C42269C361B001D0386 /* UI */,
 				EB534029269ADCF400806F67 /* TabBar */,
 			);
 			path = Common;
@@ -240,6 +243,14 @@
 				EB53403C269B0C7400806F67 /* Favorite.ViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EBF05C42269C361B001D0386 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				EBF05C43269C362A001D0386 /* FailedView.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +346,7 @@
 				EB534013269A07B400806F67 /* Photo.ViewController.swift in Sources */,
 				EB53400B2699DDFB00806F67 /* API.Manager.swift in Sources */,
 				EB53401C269A0A3400806F67 /* API.Urls.swift in Sources */,
+				EBF05C44269C362A001D0386 /* FailedView.swift in Sources */,
 				EB534016269A080100806F67 /* Photo.ViewModel.swift in Sources */,
 				EB0B56FF2699CE9700748D20 /* AppDelegate.swift in Sources */,
 				EB5340002699DC5900806F67 /* API.swift in Sources */,

@@ -16,5 +16,9 @@ extension API {
         let title: String
         let url: String
         let thumbnailUrl: String
+
+        var thumbnailUrlS: URL {
+            return URL(string: thumbnailUrl)!
+        }
     }
 }
