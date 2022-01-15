@@ -14,3 +14,7 @@ Improvements/nice to have:
  * Search function for both album and photoview.
  * Drag to refresh
  * Darkmode function
+
+# known issue:
+* app crashes when you favorite an album, scroll down and scroll up again.
+    - This is because I am saving the album and not the ID.
